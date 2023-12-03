@@ -17,7 +17,7 @@ function searchByPhone() {
 
             if (matchedOrders.length > 0) {
                 // 顯示對應的訂單資料
-                var resultHtml = '<h2>對應的訂單資料：</h2>';
+                var resultHtml = '<h2>你的訂單資料：</h2>';
                 resultHtml += '<table border="1"><tr><th>訂單編號</th><th>姓名</th><th>數量</th><th>金額</th><th>出貨狀態</th></tr>';
 
                 matchedOrders.forEach(order => {
