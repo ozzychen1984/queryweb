@@ -4,7 +4,7 @@ function searchByPhone() {
 
     var spreadsheetId = '1HghDAP4-iMTZlT58K72l2r0TZA1pDIVeyv6HhjsIZjI';
     var range = 'Sheet1!A:F';
-    var apiKey = '5fa54a2f81769807cd19b3a34d72806072472638';
+    var apiKey = 'AIzaSyB65mlwT7ZNvCIJoXViS7XTLW3Shonw-nQ';
     var apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
 
     fetch(apiUrl)
