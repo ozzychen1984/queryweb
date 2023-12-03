@@ -17,11 +17,14 @@ function searchByPhone() {
 
             if (matchedOrders.length > 0) {
                 // 顯示對應的訂單資料
-                var resultHtml = '<h2>對應的訂單資料：</h2><ul>';
+                var resultHtml = '<h2>對應的訂單資料：</h2>';
+                resultHtml += '<table border="1"><tr><th>訂單編號</th><th>姓名</th><th>數量</th><th>金額</th><th>出貨狀態</th></tr>';
+
                 matchedOrders.forEach(order => {
-                    resultHtml += `<li>訂單編號：${order[0]}, 姓名：${order[1]}, 數量：${order[2]}, 金額：${order[3]}, 出貨狀態：${order[4]}</li>`;
+                    resultHtml += `<tr><td>${order[0]}</td><td>${order[1]}</td><td>${order[2]}</td><td>${order[3]}</td><td>${order[4]}</td></tr>`;
                 });
-                resultHtml += '</ul>';
+
+                resultHtml += '</table>';
                 resultContainer.innerHTML = resultHtml;
             } else {
                 // 如果未找到匹配的電話號碼
