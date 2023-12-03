@@ -6,7 +6,7 @@ function searchPropertyNumber() {
     var spreadsheetId = '1HghDAP4-iMTZlT58K72l2r0TZA1pDIVeyv6HhjsIZjI';
 
     // 替換下面的 RANGE 為你的數據範圍，例如 'Sheet1!A:B'
-    var range = 'Sheet1!A2:F11';
+    var range = 'Sheet1!A2:F2';
 
     // 替換下面的 API_KEY 為你的 Google Sheets API 金鑰
     var apiKey = 'abb5879e75045e09cecedd1348069a1b296bd3d2';
