@@ -6,11 +6,34 @@ body {
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
+    width: 80%;
+    margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 小型設備（手機）樣式 */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* 中型設備（平板）樣式 */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* 在這裡添加平板上的樣式 */
+}
+
+/* 大型設備（桌面）樣式 */
+@media only screen and (min-width: 1025px) {
+    /* 在這裡添加桌面上的樣式 */
 }
 
 label {
@@ -19,7 +42,7 @@ label {
 }
 
 input {
-    width: 300px;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
 }
