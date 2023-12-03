@@ -3,7 +3,7 @@ function searchByPhone() {
     var resultContainer = document.getElementById('result');
 
     var spreadsheetId = '1HghDAP4-iMTZlT58K72l2r0TZA1pDIVeyv6HhjsIZjI';
-    var range = 'Sheet1!A1:F11';
+    var range = 'Sheet1!A:F';
     var apiKey = 'AIzaSyB65mlwT7ZNvCIJoXViS7XTLW3Shonw-nQ';
     var apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
 
