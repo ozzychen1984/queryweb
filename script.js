@@ -13,7 +13,7 @@ function searchByPhone() {
             var rows = data.values;
 
             // 在數據中查找匹配的電話號碼
-            var matchedOrders = rows.filter(row => row[1] === query);
+            var matchedOrders = rows.filter(row => row[5] === query);
 
             if (matchedOrders.length > 0) {
                 // 顯示對應的訂單資料
