@@ -21,17 +21,17 @@ function searchPropertyNumber() {
             var rows = data.values;
             var propertyNumberIndex = rows[0].indexOf('PropertyNumber');
             
-            // 在數據中查找匹配的財產編號
+            // 在數據中查找匹配的電話
             for (var i = 1; i < rows.length; i++) {
                 if (rows[i][propertyNumberIndex] === query) {
-                    // 顯示對應的財產編號
-                    resultContainer.innerHTML = `對應的財產編號為：${rows[i][propertyNumberIndex]}`;
+                    // 顯示對應的電話
+                    resultContainer.innerHTML = `對應的電話為：${rows[i][propertyNumberIndex]}`;
                     return;
                 }
             }
 
-            // 如果未找到匹配的財產編號
-            resultContainer.innerHTML = '未找到匹配的財產編號';
+            // 如果未找到匹配的電話
+            resultContainer.innerHTML = '未找到匹配的電話';
         })
         .catch(error => console.error('發生錯誤：', error));
 }
