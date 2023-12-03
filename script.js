@@ -1,13 +1,37 @@
-function searchGoogleForm() {
+function searchPropertyNumber() {
     var query = document.getElementById('query').value;
     var resultContainer = document.getElementById('result');
-    
-    // 替換下面的 URL 為你的 Google 表單 URL
-    var googleFormURL = 'https://docs.google.com/spreadsheets/d/1ZBHi1_3Mm7CWKzaW1Zkar0bAgLdYqd935MexwD0AjDg/edit?usp=sharing';
 
-    // 將查詢條件附加到 Google 表單 URL
-    var embeddedURL = googleFormURL + '&entry.your-field-id=' + encodeURIComponent(query);
+    // 替換下面的 SPREADSHEET_ID 為你 Google Sheets 試算表的 ID
+    var spreadsheetId = '1HghDAP4-iMTZlT58K72l2r0TZA1pDIVeyv6HhjsIZjI';
 
-    // 在結果容器中嵌入 Google 表單
-    resultContainer.innerHTML = '<iframe src="' + embeddedURL + '" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">載入中...</iframe>';
+    // 替換下面的 RANGE 為你的數據範圍，例如 'Sheet1!A:B'
+    var range = 'Sheet1!A2:F11';
+
+    // 替換下面的 API_KEY 為你的 Google Sheets API 金鑰
+    var apiKey = 'abb5879e75045e09cecedd1348069a1b296bd3d2';
+
+    // 構建 API 請求 URL
+    var apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+
+    // 使用 fetch 發送 GET 請求
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            var rows = data.values;
+            var propertyNumberIndex = rows[0].indexOf('PropertyNumber');
+            
+            // 在數據中查找匹配的財產編號
+            for (var i = 1; i < rows.length; i++) {
+                if (rows[i][propertyNumberIndex] === query) {
+                    // 顯示對應的財產編號
+                    resultContainer.innerHTML = `對應的財產編號為：${rows[i][propertyNumberIndex]}`;
+                    return;
+                }
+            }
+
+            // 如果未找到匹配的財產編號
+            resultContainer.innerHTML = '未找到匹配的財產編號';
+        })
+        .catch(error => console.error('發生錯誤：', error));
 }
