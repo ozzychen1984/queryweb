@@ -20,7 +20,7 @@ body {
     }
 
     input {
-        width: 100%;
+        width: 200px;
         padding: 10px;
         margin-bottom: 20px;
     }
@@ -42,7 +42,7 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 200px;
     padding: 10px;
     margin-bottom: 20px;
 }
