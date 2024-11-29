@@ -12,7 +12,7 @@ function searchByPhone() {
         .then(data => {
             var rows = data.values;
 
-            // 在數據中查找匹配的電話號碼
+            // 在數據中查找匹配的訂購人姓名
             var matchedOrders = rows.filter(row => row[5] === query);
 
             if (matchedOrders.length > 0) {
@@ -27,8 +27,8 @@ function searchByPhone() {
                 resultHtml += '</table>';
                 resultContainer.innerHTML = resultHtml;
             } else {
-                // 如果未找到匹配的電話號碼
-                resultContainer.innerHTML = '未找到匹配的訂單資料，請確認電話是否有誤';
+                // 如果未找到匹配的訂購人姓名
+                resultContainer.innerHTML = '未找到匹配的訂單資料，請確認訂購人姓名是否有誤';
             }
         })
         .catch(error => console.error('發生錯誤：', error));
